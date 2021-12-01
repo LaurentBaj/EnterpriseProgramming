@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class JpaHibernateApplication implements CommandLineRunner {
+public class DemoApplication implements CommandLineRunner {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -19,12 +19,14 @@ public class JpaHibernateApplication implements CommandLineRunner {
 	private CourseRepository repository;
 
 	public static void main(String[] args) {
-		SpringApplication.run(JpaHibernateApplication.class, args);
+		SpringApplication.run(DemoApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
 		Course course = repository.findById(10001L);
-		logger.info("Course 10001 {}", course);
+		logger.info("\nCourse 10001 {}\n", course);
+
+		repository.playWithEntityManager();
 	}
 }
