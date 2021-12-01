@@ -22,17 +22,17 @@ public class JpqlTest {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Test
-    public void findById()
+    public void jpql_typed()
     {
-        Query query = em.createQuery("Select c From Course c");
+        Query query = em.createNamedQuery("query_get_all_courses");
         List resultList = query.getResultList();
         logger.info("Select c From c -> {}", resultList);
     }
 
     @Test
-    public void ft()
+    public void jpql_where()
     {
-        TypedQuery<Course> query = em.createQuery("Select c From Course c where name like 'JPA in 50 steps'", Course.class);
+        TypedQuery<Course> query = em.createNamedQuery("query_get_all_courses", Course.class);
         List resultList = query.getResultList();
         logger.info("Select c From c -> {}", resultList);
     }

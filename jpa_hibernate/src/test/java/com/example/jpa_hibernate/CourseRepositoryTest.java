@@ -24,7 +24,6 @@ public class CourseRepositoryTest {
     }
 
 
-
     @Test
     @DirtiesContext  // Reset data after deletion
     public void deleteById()
