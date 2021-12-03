@@ -1,8 +1,6 @@
 package com.example.jpa_hibernate.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.*;
 
 @Entity
 public class Review {
@@ -14,11 +12,22 @@ public class Review {
     private String rating;
     private String description;
 
+    @ManyToOne
+    private Course course;
+
     public Review() {}
     public Review(String description, String rating)
     {
         this.rating = rating;
         this.description = description;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
     }
 
     public String getRating() {
