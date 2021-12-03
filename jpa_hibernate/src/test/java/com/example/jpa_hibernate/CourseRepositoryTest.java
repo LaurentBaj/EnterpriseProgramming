@@ -1,11 +1,14 @@
 package com.example.jpa_hibernate;
 
 import com.example.jpa_hibernate.entity.Course;
+import com.example.jpa_hibernate.entity.Review;
 import com.example.jpa_hibernate.repository.CourseRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
+
+import javax.transaction.Transactional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -44,5 +47,15 @@ public class CourseRepositoryTest {
         course.setName("Learn Kotlin");
         repository.save(course);
         assertEquals("Learn Kotlin", repository.findById(course.getId()).getName());
+    }
+
+    @Test
+    @Transactional
+    public void retrieveReviewsForCourse() {
+        Course course = repository.findById(10003L);
+        Review[] reviews = course.getReviews().toArray(new Review[0]);
+        for (Review review: reviews) {
+            System.out.println(review);
+        }
     }
 }

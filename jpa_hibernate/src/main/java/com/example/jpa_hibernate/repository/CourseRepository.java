@@ -1,11 +1,13 @@
 package com.example.jpa_hibernate.repository;
 
 import com.example.jpa_hibernate.entity.Course;
+import com.example.jpa_hibernate.entity.Review;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
+import java.util.List;
 
 
 @Repository
@@ -51,5 +53,16 @@ public class CourseRepository {
 
         em.flush();
         c1.setName("C# and .NET"); // flush defers changes
+    }
+
+    // Review is the owning side of the relationship
+    public void addReviewsForCourse(Long courseId, List<Review> reviews) {
+        Course course = findById(courseId);
+
+        for (Review review: reviews) {
+            course.addReview(review);
+            review.setCourse(course);
+            em.persist(review);
+        }
     }
 }

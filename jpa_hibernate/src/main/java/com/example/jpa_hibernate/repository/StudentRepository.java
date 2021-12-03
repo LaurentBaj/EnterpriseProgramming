@@ -51,4 +51,18 @@ public class StudentRepository {
         student.setPassport(passport);
         em.persist(student);
     }
+
+    public void insertStudentAndCourse() {
+        Student student = new Student("Jack");
+        Course course = new Course("Microservices");
+        em.persist(student);
+        em.persist(course);
+
+        student.addCourse(course);
+        course.addStudent(student);
+
+        // Student is the owning side
+        // We need only to persist the student
+        em.persist(student);
+    }
 }
