@@ -2,6 +2,7 @@ package no.kristiania.pg6102_exam.boat.transformer
 
 import no.kristiania.pg6102_exam.boat.entity.Boat
 import no.kristiania.pg6102_exam.boat.dto.AddBoatRequest
+import no.kristiania.pg6102_exam.shared.Transformer
 import org.springframework.stereotype.Component
 
 @Component

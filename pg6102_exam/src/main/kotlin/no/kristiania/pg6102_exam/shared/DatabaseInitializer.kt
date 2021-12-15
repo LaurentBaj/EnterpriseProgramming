@@ -1,6 +1,8 @@
-package no.kristiania.pg6102_exam.boat.resource
+package no.kristiania.pg6102_exam.shared
 
 import no.kristiania.pg6102_exam.boat.dto.AddBoatRequest
+import no.kristiania.pg6102_exam.boat.resource.BoatResourceImpl
+import no.kristiania.pg6102_exam.trip.resource.TripResourceImpl
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import javax.annotation.PostConstruct

@@ -7,6 +7,7 @@ import no.kristiania.pg6102_exam.boat.dto.BoatResponse
 import no.kristiania.pg6102_exam.boat.dto.UpdateBoatResponse
 import no.kristiania.pg6102_exam.boat.transformer.AddBoatRequestTransformer
 import no.kristiania.pg6102_exam.boat.transformer.toBoatResponse
+
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.data.repository.findByIdOrNull

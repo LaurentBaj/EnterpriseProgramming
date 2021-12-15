@@ -3,8 +3,9 @@ package no.kristiania.pg6102_exam.boat.resource
 import no.kristiania.pg6102_exam.boat.dto.AddBoatRequest
 import no.kristiania.pg6102_exam.boat.dto.BoatResponse
 import no.kristiania.pg6102_exam.boat.dto.UpdateBoatResponse
-import no.kristiania.pg6102_exam.boat.resource.BoatResourceImpl.Companion.BASE_PERSON_URL
+import no.kristiania.pg6102_exam.boat.resource.BoatResourceImpl.Companion.TRIP_BASE_URL
 import no.kristiania.pg6102_exam.boat.service.BoatManagementService
+
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.http.HttpStatus
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.*
 import java.net.URI
 
 @RestController
-@RequestMapping(value = [BASE_PERSON_URL])
+@RequestMapping(value = [TRIP_BASE_URL])
 class BoatResourceImpl(private val boatManagementService: BoatManagementService) : BoatResource {
 
     @GetMapping("/{id}")
@@ -29,7 +30,7 @@ class BoatResourceImpl(private val boatManagementService: BoatManagementService)
     override fun save(@RequestBody addBoatRequest: AddBoatRequest): ResponseEntity<BoatResponse> {
         val boatResponse = this.boatManagementService.save(addBoatRequest)
         return ResponseEntity
-                .created(URI.create(BASE_PERSON_URL.plus("/${boatResponse.id}")))
+                .created(URI.create(TRIP_BASE_URL.plus("/${boatResponse.id}")))
                 .body(boatResponse)
     }
 
@@ -49,6 +50,6 @@ class BoatResourceImpl(private val boatManagementService: BoatManagementService)
     }
 
     companion object {
-        const val BASE_PERSON_URL: String = "/api/v1/boats"
+        const val TRIP_BASE_URL: String = "/api/v1/trips"
     }
 }
