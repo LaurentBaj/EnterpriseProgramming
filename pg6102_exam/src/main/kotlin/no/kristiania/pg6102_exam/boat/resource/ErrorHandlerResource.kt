@@ -1,6 +1,6 @@
-package no.kristiania.pg6102_exam.person.resource
+package no.kristiania.pg6102_exam.boat.resource
 
-import no.kristiania.pg6102_exam.person.dto.ErrorResponse
+import no.kristiania.pg6102_exam.boat.dto.ErrorResponse
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.ControllerAdvice
 import org.springframework.web.bind.annotation.ExceptionHandler

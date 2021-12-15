@@ -1,4 +1,4 @@
-package no.kristiania.pg6102_exam.person.dto
+package no.kristiania.pg6102_exam.boat.dto
 
 import java.time.LocalDateTime
 

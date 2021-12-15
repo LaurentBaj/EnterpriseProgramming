@@ -1,6 +1,6 @@
 package no.kristiania.pg6102_exam
 
-import no.kristiania.pg6102_exam.person.domain.Person
+import no.kristiania.pg6102_exam.boat.dto.BoatResponse
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.web.bind.annotation.GetMapping
@@ -14,8 +14,8 @@ class Pg6102ExamApplication {
 
 
 	@GetMapping("")
-	fun hi(): Person {
-		return Person(name = "Laurent", lastName = "Bajrami")
+	fun hi(): BoatResponse {
+		return BoatResponse(17, "Laurent Bajrami")
 	}
 }
 
