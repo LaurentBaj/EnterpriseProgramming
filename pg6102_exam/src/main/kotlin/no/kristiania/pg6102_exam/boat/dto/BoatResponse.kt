@@ -1,3 +1,3 @@
 package no.kristiania.pg6102_exam.boat.dto
 
-class BoatResponse (val id: Long, val fullName: String)
+class BoatResponse (val id: Long, val builder: String)

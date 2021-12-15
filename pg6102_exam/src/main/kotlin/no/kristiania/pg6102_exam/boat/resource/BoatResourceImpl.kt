@@ -49,6 +49,6 @@ class BoatResourceImpl(private val boatManagementService: BoatManagementService)
     }
 
     companion object {
-        const val BASE_PERSON_URL: String = "/api/v1/person"
+        const val BASE_PERSON_URL: String = "/api/v1/boats"
     }
 }

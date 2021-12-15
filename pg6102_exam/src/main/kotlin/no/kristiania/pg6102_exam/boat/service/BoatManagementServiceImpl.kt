@@ -31,7 +31,7 @@ class BoatManagementServiceImpl(private val boatDao: BoatDao,
 
         return this.saveOrUpdate(person.apply {
             this.name = updateBoatResponse.name
-            this.builder = updateBoatResponse.lastName
+            this.builder = updateBoatResponse.builder
         })
     }
 

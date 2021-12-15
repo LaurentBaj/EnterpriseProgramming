@@ -13,5 +13,5 @@ interface BoatResource {
     fun save(addBoatRequest: AddBoatRequest): ResponseEntity<BoatResponse>
     fun update(updateBoatResponse: UpdateBoatResponse): ResponseEntity<BoatResponse>
     fun deleteById(id: Long): ResponseEntity<Unit>
-    fun deleteAll(): Unit
+    fun deleteAll()
 }
