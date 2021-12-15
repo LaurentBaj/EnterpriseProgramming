@@ -1,7 +1,7 @@
-package no.kristiania.pg6102_exam.transformer
+package no.kristiania.pg6102_exam.person.transformer
 
-import no.kristiania.pg6102_exam.domain.Person
-import no.kristiania.pg6102_exam.dto.PersonResponse
+import no.kristiania.pg6102_exam.person.domain.Person
+import no.kristiania.pg6102_exam.person.dto.PersonResponse
 
 fun Person?.toPersonResponse(): PersonResponse {
     return PersonResponse(

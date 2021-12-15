@@ -1,13 +1,12 @@
-package no.kristiania.pg6102_exam.service
+package no.kristiania.pg6102_exam.person.service
 
-import no.kristiania.pg6102_exam.dao.PersonDao
-import no.kristiania.pg6102_exam.domain.Person
-import no.kristiania.pg6102_exam.dto.AddPersonRequest
-import no.kristiania.pg6102_exam.dto.PersonResponse
-import no.kristiania.pg6102_exam.dto.UpdatePersonRequest
-import no.kristiania.pg6102_exam.transformer.AddPersonRequestTransformer
-import no.kristiania.pg6102_exam.transformer.toPersonResponse
-import org.springframework.beans.factory.annotation.Autowired
+import no.kristiania.pg6102_exam.person.dao.PersonDao
+import no.kristiania.pg6102_exam.person.domain.Person
+import no.kristiania.pg6102_exam.person.dto.AddPersonRequest
+import no.kristiania.pg6102_exam.person.dto.PersonResponse
+import no.kristiania.pg6102_exam.person.dto.UpdatePersonRequest
+import no.kristiania.pg6102_exam.person.transformer.AddPersonRequestTransformer
+import no.kristiania.pg6102_exam.person.transformer.toPersonResponse
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.data.repository.findByIdOrNull

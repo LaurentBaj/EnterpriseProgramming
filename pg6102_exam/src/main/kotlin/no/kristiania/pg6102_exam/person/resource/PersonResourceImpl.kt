@@ -1,10 +1,10 @@
-package no.kristiania.pg6102_exam.resource
+package no.kristiania.pg6102_exam.person.resource
 
-import no.kristiania.pg6102_exam.dto.AddPersonRequest
-import no.kristiania.pg6102_exam.dto.PersonResponse
-import no.kristiania.pg6102_exam.dto.UpdatePersonRequest
-import no.kristiania.pg6102_exam.resource.PersonResourceImpl.Companion.BASE_PERSON_URL
-import no.kristiania.pg6102_exam.service.PersonManagementService
+import no.kristiania.pg6102_exam.person.dto.AddPersonRequest
+import no.kristiania.pg6102_exam.person.dto.PersonResponse
+import no.kristiania.pg6102_exam.person.dto.UpdatePersonRequest
+import no.kristiania.pg6102_exam.person.resource.PersonResourceImpl.Companion.BASE_PERSON_URL
+import no.kristiania.pg6102_exam.person.service.PersonManagementService
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.http.HttpStatus

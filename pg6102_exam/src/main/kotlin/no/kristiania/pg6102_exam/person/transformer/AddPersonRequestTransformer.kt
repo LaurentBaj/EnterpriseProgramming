@@ -1,7 +1,7 @@
-package no.kristiania.pg6102_exam.transformer
+package no.kristiania.pg6102_exam.person.transformer
 
-import no.kristiania.pg6102_exam.domain.Person
-import no.kristiania.pg6102_exam.dto.AddPersonRequest
+import no.kristiania.pg6102_exam.person.domain.Person
+import no.kristiania.pg6102_exam.person.dto.AddPersonRequest
 import org.springframework.stereotype.Component
 
 @Component

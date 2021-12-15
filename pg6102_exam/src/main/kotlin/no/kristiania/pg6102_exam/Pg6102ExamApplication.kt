@@ -1,6 +1,6 @@
 package no.kristiania.pg6102_exam
 
-import no.kristiania.pg6102_exam.domain.Person
+import no.kristiania.pg6102_exam.person.domain.Person
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.web.bind.annotation.GetMapping

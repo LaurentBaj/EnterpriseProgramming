@@ -1,8 +1,8 @@
-package no.kristiania.pg6102_exam.resource
+package no.kristiania.pg6102_exam.person.resource
 
-import no.kristiania.pg6102_exam.dto.AddPersonRequest
-import no.kristiania.pg6102_exam.dto.PersonResponse
-import no.kristiania.pg6102_exam.dto.UpdatePersonRequest
+import no.kristiania.pg6102_exam.person.dto.AddPersonRequest
+import no.kristiania.pg6102_exam.person.dto.PersonResponse
+import no.kristiania.pg6102_exam.person.dto.UpdatePersonRequest
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.http.ResponseEntity

@@ -1,8 +1,6 @@
-package no.kristiania.pg6102_exam.resource
+package no.kristiania.pg6102_exam.person.resource
 
-import no.kristiania.pg6102_exam.domain.Person
-import no.kristiania.pg6102_exam.dto.AddPersonRequest
-import no.kristiania.pg6102_exam.dto.PersonResponse
+import no.kristiania.pg6102_exam.person.dto.AddPersonRequest
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import javax.annotation.PostConstruct

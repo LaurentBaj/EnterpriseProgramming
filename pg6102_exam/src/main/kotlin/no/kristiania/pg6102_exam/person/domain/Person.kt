@@ -1,4 +1,4 @@
-package no.kristiania.pg6102_exam.domain
+package no.kristiania.pg6102_exam.person.domain
 
 import javax.persistence.*
 
