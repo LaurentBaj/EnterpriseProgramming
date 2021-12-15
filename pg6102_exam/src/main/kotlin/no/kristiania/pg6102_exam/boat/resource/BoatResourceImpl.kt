@@ -18,8 +18,8 @@ class BoatResourceImpl(private val boatManagementService: BoatManagementService)
 
     @GetMapping("/{id}")
     override fun findById(id: Long): ResponseEntity<BoatResponse>? {
-        val personResponse = this.boatManagementService.findById(id)
-        return ResponseEntity.status(HttpStatus.OK).body(personResponse)
+        val boatResponse = this.boatManagementService.findById(id)
+        return ResponseEntity.status(HttpStatus.OK).body(boatResponse)
     }
 
     @GetMapping
@@ -27,10 +27,10 @@ class BoatResourceImpl(private val boatManagementService: BoatManagementService)
 
     @PostMapping()
     override fun save(@RequestBody addBoatRequest: AddBoatRequest): ResponseEntity<BoatResponse> {
-        val personResponse = this.boatManagementService.save(addBoatRequest)
+        val boatResponse = this.boatManagementService.save(addBoatRequest)
         return ResponseEntity
-                .created(URI.create(BASE_PERSON_URL.plus("/${personResponse.id}")))
-                .body(personResponse)
+                .created(URI.create(BASE_PERSON_URL.plus("/${boatResponse.id}")))
+                .body(boatResponse)
     }
 
     @PutMapping

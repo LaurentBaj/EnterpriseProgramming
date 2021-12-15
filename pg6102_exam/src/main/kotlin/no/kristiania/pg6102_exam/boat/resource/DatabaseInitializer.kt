@@ -14,10 +14,10 @@ class DatabaseInitializer(
     fun initialize(){
         repository.run {
             deleteAll()
-            save(AddBoatRequest("Laurent", "Bajrami"))
-            save(AddBoatRequest("Ben", "Bajrami"))
-            save(AddBoatRequest("Arzana", "Bajrami"))
-            save(AddBoatRequest("Osman", "Bajrami"))
+            save(AddBoatRequest("Serenity", "Graydon Hoare", 12))
+            save(AddBoatRequest("Grace", "Dennis M. Ritchie"))
+            save(AddBoatRequest("Pegasus", "Linus Torvalds", 3))
+            save(AddBoatRequest("Rum Runner", "Bjarne Stroustrup", 9))
         }
     }
 }

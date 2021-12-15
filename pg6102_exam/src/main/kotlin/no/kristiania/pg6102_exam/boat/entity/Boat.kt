@@ -10,7 +10,8 @@ data class Boat(
         @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = BOAT_SEQUENCE)
         val id: Long = 1,
         var name: String = "",
-        var builder: String? = null) {
+        var builder: String? = null,
+        var crewMembers: Int = 0) {
 
     companion object {
         const val BOAT_SEQUENCE: String = "BOAT_SEQUENCE"

@@ -9,7 +9,8 @@ class AddBoatRequestTransformer : Transformer<AddBoatRequest, Boat> {
     override fun transform(source: AddBoatRequest): Boat {
         return Boat(
                 name = source.name,
-                builder = source.builder
+                builder = source.builder,
+                crewMembers = source.crewMembers
         )
     }
 }

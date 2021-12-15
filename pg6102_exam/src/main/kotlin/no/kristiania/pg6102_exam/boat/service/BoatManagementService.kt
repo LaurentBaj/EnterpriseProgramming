@@ -11,6 +11,6 @@ interface BoatManagementService {
     fun findAll(pageable: Pageable): Page<BoatResponse>
     fun save(addBoatRequest: AddBoatRequest): BoatResponse
     fun update(updateBoatResponse: UpdateBoatResponse): BoatResponse
-    fun deleteAll(): Unit 
+    fun deleteAll()
     fun deleteById(id: Long)
 }

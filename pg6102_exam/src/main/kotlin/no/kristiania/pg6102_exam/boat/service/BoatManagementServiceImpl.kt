@@ -6,7 +6,7 @@ import no.kristiania.pg6102_exam.boat.dto.AddBoatRequest
 import no.kristiania.pg6102_exam.boat.dto.BoatResponse
 import no.kristiania.pg6102_exam.boat.dto.UpdateBoatResponse
 import no.kristiania.pg6102_exam.boat.transformer.AddBoatRequestTransformer
-import no.kristiania.pg6102_exam.boat.transformer.toPersonResponse
+import no.kristiania.pg6102_exam.boat.transformer.toBoatResponse
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.data.repository.findByIdOrNull
@@ -16,9 +16,9 @@ import org.springframework.stereotype.Service
 class BoatManagementServiceImpl(private val boatDao: BoatDao,
                                 private val addBoatRequestTransformer: AddBoatRequestTransformer) : BoatManagementService {
 
-    override fun findById(id: Long): BoatResponse? = this.findPersonById(id).toPersonResponse()
+    override fun findById(id: Long): BoatResponse? = this.findBoatById(id).toBoatResponse()
 
-    override fun findAll(pageable: Pageable): Page<BoatResponse> = this.boatDao.findAll(pageable).map(Boat::toPersonResponse)
+    override fun findAll(pageable: Pageable): Page<BoatResponse> = this.boatDao.findAll(pageable).map(Boat::toBoatResponse)
 
     override fun save(addBoatRequest: AddBoatRequest): BoatResponse {
         return this.saveOrUpdate(
@@ -27,7 +27,7 @@ class BoatManagementServiceImpl(private val boatDao: BoatDao,
     }
 
     override fun update(updateBoatResponse: UpdateBoatResponse): BoatResponse {
-        val person = this.findPersonById(updateBoatResponse.id) ?: throw IllegalStateException("${updateBoatResponse.id} not found")
+        val person = this.findBoatById(updateBoatResponse.id) ?: throw IllegalStateException("${updateBoatResponse.id} not found")
 
         return this.saveOrUpdate(person.apply {
             this.name = updateBoatResponse.name
@@ -43,7 +43,7 @@ class BoatManagementServiceImpl(private val boatDao: BoatDao,
         this.boatDao.deleteById(id)
     }
 
-    private fun findPersonById(id: Long): Boat? = this.boatDao.findByIdOrNull(id)
+    private fun findBoatById(id: Long): Boat? = this.boatDao.findByIdOrNull(id)
 
-    private fun saveOrUpdate(boat: Boat): BoatResponse = this.boatDao.save(boat).toPersonResponse()
+    private fun saveOrUpdate(boat: Boat): BoatResponse = this.boatDao.save(boat).toBoatResponse()
 }
