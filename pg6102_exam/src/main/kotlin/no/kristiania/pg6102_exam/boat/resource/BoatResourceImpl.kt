@@ -3,8 +3,8 @@ package no.kristiania.pg6102_exam.boat.resource
 import no.kristiania.pg6102_exam.boat.dto.AddBoatRequest
 import no.kristiania.pg6102_exam.boat.dto.BoatResponse
 import no.kristiania.pg6102_exam.boat.dto.UpdateBoatResponse
-import no.kristiania.pg6102_exam.boat.resource.BoatResourceImpl.Companion.BOAT_BASE_URL
 import no.kristiania.pg6102_exam.boat.service.BoatManagementService
+import no.kristiania.pg6102_exam.shared.URLs.BASE_BOAT_URL
 
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
@@ -15,7 +15,7 @@ import java.net.URI
 
 
 @RestController
-@RequestMapping(value = [BOAT_BASE_URL])
+@RequestMapping(value = [BASE_BOAT_URL])
 class BoatResourceImpl(private val boatManagementService: BoatManagementService) : BoatResource {
 
     @GetMapping("/{id}")
@@ -31,7 +31,7 @@ class BoatResourceImpl(private val boatManagementService: BoatManagementService)
     override fun save(@RequestBody addBoatRequest: AddBoatRequest): ResponseEntity<BoatResponse> {
         val boatResponse = this.boatManagementService.save(addBoatRequest)
         return ResponseEntity
-                .created(URI.create(BOAT_BASE_URL.plus("/${boatResponse.id}")))
+                .created(URI.create(BASE_BOAT_URL.plus("/${boatResponse.id}")))
                 .body(boatResponse)
     }
 
@@ -48,9 +48,5 @@ class BoatResourceImpl(private val boatManagementService: BoatManagementService)
 
     override fun deleteAll() {
         boatManagementService.deleteAll()
-    }
-
-    companion object {
-        const val BOAT_BASE_URL: String = "/api/v1/boats"
     }
 }

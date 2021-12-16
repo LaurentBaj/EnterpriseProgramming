@@ -1,9 +1,9 @@
 package no.kristiania.pg6102_exam.trip.resource
 
+import no.kristiania.pg6102_exam.shared.URLs.BASE_TRIP_URL
 import no.kristiania.pg6102_exam.trip.dto.AddTripRequest
 import no.kristiania.pg6102_exam.trip.dto.TripResponse
 import no.kristiania.pg6102_exam.trip.dto.UpdateTripResponse
-import no.kristiania.pg6102_exam.trip.resource.TripResourceImpl.Companion.BASE_TRIP_URL
 import no.kristiania.pg6102_exam.trip.service.TripManagementService
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
@@ -46,9 +46,5 @@ class TripResourceImpl(private val tripManagementService: TripManagementService)
 
     override fun deleteAll() {
         tripManagementService.deleteAll()
-    }
-
-    companion object {
-        const val BASE_TRIP_URL: String = "/api/v1/trips"
     }
 }
