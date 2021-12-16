@@ -23,25 +23,18 @@ class DatabaseInitializer(
     fun initialize(){
         tripRepository.run {
             deleteAll()
-
             save(AddTripRequest("Oslo", "Reykjavik"))
             save(AddTripRequest("Amsterdam", "Milan"))
             save(AddTripRequest("Dublin", "London"))
             save(AddTripRequest("Bratislava", "Johannesburg"))
-
-
         }
 
         boatRepository.run {
             deleteAll()
-
             save(AddBoatRequest("Serenity", "Graydon Hoare", 12))
             save(AddBoatRequest("Grace", "Dennis M. Ritchie"))
             save(AddBoatRequest("Pegasus", "Linus Torvalds", 3))
             save(AddBoatRequest("Rum Runner", "Bjarne Stroustrup", 9))
-
-            update(UpdateBoatResponse(1, "Ser", "Gray", 12))
-            deleteById(1)
         }
     }
 }
