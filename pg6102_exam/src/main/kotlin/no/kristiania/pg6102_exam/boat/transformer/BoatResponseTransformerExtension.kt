@@ -6,7 +6,8 @@ import no.kristiania.pg6102_exam.boat.entity.Boat
 fun Boat?.toBoatResponse(): BoatResponse {
     return BoatResponse(
             id = this?.id ?: 1L,
-            builder = "${this?.builder}, ${this?.name}",
+            name = this!!.name,
+            builder = "${this?.builder}",
             crewMembers = this!!.crewMembers
     )
 }

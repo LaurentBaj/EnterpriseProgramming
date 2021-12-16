@@ -4,11 +4,14 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.ControllerAdvice
 import org.springframework.web.bind.annotation.ExceptionHandler
 
-@ControllerAdvice
-class ErrorHandlerResource {
+// THIS USED TO WORK IN THE BEGINNING, BUT AS I CONTINUED DEVELOPING THE PROJECT
+// IT THEN STARTED TO ACT VERY STRANGE, SO I JUST REMOVED IT
 
-    @ExceptionHandler(IllegalStateException::class)
-    fun handleIllegalState(ex: IllegalStateException) : ResponseEntity<ErrorResponse> {
-        return ResponseEntity.badRequest().body(ErrorResponse(message = ex.localizedMessage))
-    }
-}
+//@ControllerAdvice
+//class ErrorHandlerResource {
+//
+//    @ExceptionHandler(IllegalStateException::class)
+//    fun handleIllegalState(ex: IllegalStateException) : ResponseEntity<ErrorResponse> {
+//        return ResponseEntity.badRequest().body(ErrorResponse(message = ex.localizedMessage))
+//    }
+//}

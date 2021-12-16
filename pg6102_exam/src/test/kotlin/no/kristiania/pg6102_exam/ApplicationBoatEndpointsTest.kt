@@ -2,17 +2,11 @@ package no.kristiania.pg6102_exam
 
 import io.restassured.RestAssured
 import io.restassured.http.ContentType
-import net.bytebuddy.implementation.bind.annotation.IgnoreForBinding
+import no.kristiania.pg6102_exam.boat.dto.AddBoatRequest
+import no.kristiania.pg6102_exam.boat.resource.BoatResourceImpl
 import no.kristiania.pg6102_exam.trip.dto.AddTripRequest
-import no.kristiania.pg6102_exam.trip.dto.TripResponse
-import no.kristiania.pg6102_exam.trip.dto.UpdateTripRequest
-import no.kristiania.pg6102_exam.trip.entity.Trip
-import no.kristiania.pg6102_exam.trip.resource.TripResourceImpl
-import org.hamcrest.CoreMatchers
 import org.hamcrest.Matchers.equalTo
-import org.hamcrest.Matchers.hasItem
 import org.junit.jupiter.api.AfterEach
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
@@ -20,21 +14,19 @@ import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.web.server.LocalServerPort
-import org.springframework.stereotype.Repository
 import org.springframework.test.context.junit.jupiter.SpringExtension
-import javax.transaction.Transactional
 
 @ExtendWith(SpringExtension::class)
 @SpringBootTest(classes = [(Pg6102ExamApplication::class)],
 		webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class ApplicationTripEndpointsTest {
+class ApplicationBoatEndpointsTest {
 
 
 	@LocalServerPort
 	protected var port = 0
 
 	@Autowired
-	protected lateinit var repository: TripResourceImpl
+	protected lateinit var repository: BoatResourceImpl
 
 
 	@BeforeEach
@@ -44,20 +36,20 @@ class ApplicationTripEndpointsTest {
 		// RestAssured configs shared by all the tests
 		RestAssured.baseURI = "http://localhost"
 		RestAssured.port = port
-		RestAssured.basePath = "/api/v1/trips/"
+		RestAssured.basePath = "/api/v1/boats/"
 		RestAssured.enableLoggingOfRequestAndResponseIfValidationFails()
 
 		repository.run {
 			deleteAll()
-			save(AddTripRequest("Oslo", "Reykjavik"))
-			save(AddTripRequest("Milan", "Johannesburg"))
-			save(AddTripRequest("Dublin", "London"))
-			save(AddTripRequest("Bratislava", "Cairo"))
+			save(AddBoatRequest("Serenity", "Graydon Hoare", 12))
+			save(AddBoatRequest("Grace", "Dennis M. Ritchie"))
+			save(AddBoatRequest("Pegasus", "Linus Torvalds", 3))
+			save(AddBoatRequest("Rum Runner", "Bjarne Stroustrup", 9))
 		}
 	}
 
 	@Test
-	fun testGetAllTrips() {
+	fun testGetAllBoats() {
 		RestAssured.given().accept(ContentType.JSON)
 				.get()
 				.then()
@@ -65,13 +57,13 @@ class ApplicationTripEndpointsTest {
 	}
 
 	@Test
-	fun testRetrieveSingleTrip() {
+	fun testRetrieveSingleBoat() {
 
 		RestAssured.given().accept(ContentType.JSON)
 				.get()
 				.then()
 				.statusCode(200)
-				.body("content[0].destinationPort", equalTo("Reykjavik"))
+				.body("content[0].name", equalTo("Serenity"))
 
 				//  -- Unable to use the data structures correctly here --
 				//
@@ -94,20 +86,20 @@ class ApplicationTripEndpointsTest {
 
 
 	@Test
-	fun testAddTrip() {
-		repository.run { save(AddTripRequest("Moskva", "Madrid")) }
+	fun testAddBoat() {
+		repository.run { save(AddBoatRequest("Freya", "Elon Musk")) }
 		RestAssured.given().accept(ContentType.JSON)
 				.get()
 				.then()
 				.statusCode(200)
-				.body("content[4].destinationPort", equalTo("Madrid"))
+				.body("content[4].builder", equalTo("Elon Musk"))
 	}
 
 	@Test
 	@Disabled("Works only when run separately from other tests")
-	fun testDeleteTrip() {
+	fun testDeleteBoat() {
 		repository.run {
-			save(AddTripRequest("Moskva", "Madrid"))
+			save(AddBoatRequest("Freya", "Elon Musk"))
 			deleteById(5)
 		}
 		RestAssured.given().accept(ContentType.JSON)
