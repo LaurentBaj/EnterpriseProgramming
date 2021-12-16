@@ -6,7 +6,7 @@ import no.kristiania.pg6102_exam.trip.entity.Trip
 fun Trip?.toTripResponse(): TripResponse {
     return TripResponse(
             id = this?.id ?: 1L,
-            builder = "${this?.builder}, ${this?.name}",
-            crewMembers = this!!.crewMembers
+            departurePort = "${this?.departurePort}",
+            destinationPort = "${this?.destinationPort}"
     )
 }

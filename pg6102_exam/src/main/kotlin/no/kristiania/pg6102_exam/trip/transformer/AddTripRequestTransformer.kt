@@ -9,9 +9,8 @@ import org.springframework.stereotype.Component
 class AddTripRequestTransformer : Transformer<AddTripRequest, Trip> {
     override fun transform(source: AddTripRequest): Trip {
         return Trip(
-                name = source.name,
-                builder = source.builder,
-                crewMembers = source.crewMembers
+                departurePort = source.departurePort,
+                destinationPort = source.destinationPort,
         )
     }
 }

@@ -10,14 +10,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @SpringBootApplication
 @RestController
-class Pg6102ExamApplication {
-
-
-	@GetMapping("")
-	fun hi(): TripResponse {
-		return TripResponse(17, "Laurent Bajrami")
-	}
-}
+class Pg6102ExamApplication
 
 
 

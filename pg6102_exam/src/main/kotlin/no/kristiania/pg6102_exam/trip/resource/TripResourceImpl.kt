@@ -17,9 +17,9 @@ import java.net.URI
 class TripResourceImpl(private val tripManagementService: TripManagementService) : TripResource {
 
     @GetMapping("/{id}")
-    override fun findById(id: Long): ResponseEntity<TripResponse>? {
-        val boatResponse = this.tripManagementService.findById(id)
-        return ResponseEntity.status(HttpStatus.OK).body(boatResponse)
+    override fun findById(@PathVariable id: Long): ResponseEntity<TripResponse>? {
+        val tripResponse = this.tripManagementService.findById(id)
+        return ResponseEntity.status(HttpStatus.OK).body(tripResponse)
     }
 
     @GetMapping
@@ -27,10 +27,10 @@ class TripResourceImpl(private val tripManagementService: TripManagementService)
 
     @PostMapping()
     override fun save(@RequestBody addTripRequest: AddTripRequest): ResponseEntity<TripResponse> {
-        val boatResponse = this.tripManagementService.save(addTripRequest)
+        val tripResponse = this.tripManagementService.save(addTripRequest)
         return ResponseEntity
-                .created(URI.create(BASE_TRIP_URL.plus("/${boatResponse.id}")))
-                .body(boatResponse)
+                .created(URI.create(BASE_TRIP_URL.plus("/${tripResponse.id}")))
+                .body(tripResponse)
     }
 
     @PutMapping
@@ -49,6 +49,6 @@ class TripResourceImpl(private val tripManagementService: TripManagementService)
     }
 
     companion object {
-        const val BASE_TRIP_URL: String = "/api/v1/boats"
+        const val BASE_TRIP_URL: String = "/api/v1/trips"
     }
 }

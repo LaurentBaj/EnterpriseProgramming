@@ -31,8 +31,8 @@ class TripManagementServiceImpl(private val tripDao: TripDao,
         val trip = this.findTripById(updateTripResponse.id) ?: throw IllegalStateException("${updateTripResponse.id} not found")
 
         return this.saveOrUpdate(trip.apply {
-            this.name = updateTripResponse.name
-            this.builder = updateTripResponse.builder
+            this.departurePort = updateTripResponse.departurePort
+            this.destinationPort = updateTripResponse.destinationPort
         })
     }
 
