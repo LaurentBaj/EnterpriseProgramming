@@ -1,4 +1,4 @@
-package no.kristiania.pg6102_exam.dto
+package no.kristiania.pg6102_exam.shared
 
 import java.time.LocalDateTime
 

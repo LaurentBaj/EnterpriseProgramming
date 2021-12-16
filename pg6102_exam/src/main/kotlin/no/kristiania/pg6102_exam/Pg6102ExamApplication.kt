@@ -1,6 +1,6 @@
 package no.kristiania.pg6102_exam
 
-import no.kristiania.pg6102_exam.domain.Person
+import no.kristiania.pg6102_exam.trip.dto.TripResponse
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.web.bind.annotation.GetMapping
@@ -10,14 +10,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @SpringBootApplication
 @RestController
-class Pg6102ExamApplication {
-
-
-	@GetMapping("")
-	fun hi(): Person {
-		return Person(name = "Laurent", lastName = "Bajrami")
-	}
-}
+class Pg6102ExamApplication
 
 
 

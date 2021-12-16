@@ -1,6 +1,5 @@
-package no.kristiania.pg6102_exam.resource
+package no.kristiania.pg6102_exam.shared
 
-import no.kristiania.pg6102_exam.dto.ErrorResponse
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.ControllerAdvice
 import org.springframework.web.bind.annotation.ExceptionHandler
