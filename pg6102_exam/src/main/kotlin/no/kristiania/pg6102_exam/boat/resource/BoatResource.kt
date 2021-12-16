@@ -3,6 +3,7 @@ package no.kristiania.pg6102_exam.boat.resource
 import no.kristiania.pg6102_exam.boat.dto.AddBoatRequest
 import no.kristiania.pg6102_exam.boat.dto.BoatResponse
 import no.kristiania.pg6102_exam.boat.dto.UpdateBoatResponse
+import no.kristiania.pg6102_exam.trip.entity.Trip
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.http.ResponseEntity

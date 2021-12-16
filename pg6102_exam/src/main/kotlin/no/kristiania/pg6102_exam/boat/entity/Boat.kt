@@ -4,7 +4,7 @@ import no.kristiania.pg6102_exam.trip.entity.Trip
 import javax.persistence.*
 
 @Entity
-data class Boat(
+class Boat(
 
         @Id
         @SequenceGenerator(name = BOAT_SEQUENCE, sequenceName = BOAT_SEQUENCE, initialValue = 1, allocationSize = 1)

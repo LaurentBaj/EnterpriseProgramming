@@ -5,6 +5,7 @@ import no.kristiania.pg6102_exam.boat.dto.BoatResponse
 import no.kristiania.pg6102_exam.boat.dto.UpdateBoatResponse
 import no.kristiania.pg6102_exam.boat.service.BoatManagementService
 import no.kristiania.pg6102_exam.shared.URLs.BASE_BOAT_URL
+import no.kristiania.pg6102_exam.trip.entity.Trip
 
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
@@ -12,6 +13,7 @@ import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import java.net.URI
+import javax.transaction.Transactional
 
 
 @RestController
