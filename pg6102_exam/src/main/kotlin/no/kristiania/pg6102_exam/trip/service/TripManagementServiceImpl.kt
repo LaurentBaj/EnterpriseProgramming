@@ -4,7 +4,7 @@ package no.kristiania.pg6102_exam.trip.service
 import no.kristiania.pg6102_exam.trip.dao.TripDao
 import no.kristiania.pg6102_exam.trip.dto.AddTripRequest
 import no.kristiania.pg6102_exam.trip.dto.TripResponse
-import no.kristiania.pg6102_exam.trip.dto.UpdateTripResponse
+import no.kristiania.pg6102_exam.trip.dto.UpdateTripRequest
 import no.kristiania.pg6102_exam.trip.entity.Trip
 import no.kristiania.pg6102_exam.trip.transformer.AddTripRequestTransformer
 import no.kristiania.pg6102_exam.trip.transformer.toTripResponse
@@ -27,12 +27,12 @@ class TripManagementServiceImpl(private val tripDao: TripDao,
         )
     }
 
-    override fun update(updateTripResponse: UpdateTripResponse): TripResponse {
-        val trip = this.findTripById(updateTripResponse.id) ?: throw IllegalStateException("${updateTripResponse.id} not found")
+    override fun update(updateTripRequest: UpdateTripRequest): TripResponse {
+        val trip = this.findTripById(updateTripRequest.id) ?: throw IllegalStateException("${updateTripRequest.id} not found")
 
         return this.saveOrUpdate(trip.apply {
-            this.departurePort = updateTripResponse.departurePort
-            this.destinationPort = updateTripResponse.destinationPort
+            this.departurePort = updateTripRequest.departurePort
+            this.destinationPort = updateTripRequest.destinationPort
         })
     }
 

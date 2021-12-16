@@ -21,7 +21,7 @@ import javax.transaction.Transactional
 class BoatResourceImpl(private val boatManagementService: BoatManagementService) : BoatResource {
 
     @GetMapping("/{id}")
-    override fun findById(id: Long): ResponseEntity<BoatResponse>? {
+    override fun findById(@PathVariable id: Long): ResponseEntity<BoatResponse>? {
         val boatResponse = this.boatManagementService.findById(id)
         return ResponseEntity.status(HttpStatus.OK).body(boatResponse)
     }

@@ -2,13 +2,9 @@ package no.kristiania.pg6102_exam.shared
 
 import no.kristiania.pg6102_exam.boat.dto.AddBoatRequest
 import no.kristiania.pg6102_exam.boat.dto.UpdateBoatResponse
-import no.kristiania.pg6102_exam.boat.entity.Boat
 import no.kristiania.pg6102_exam.boat.resource.BoatResourceImpl
 import no.kristiania.pg6102_exam.trip.dto.AddTripRequest
-import no.kristiania.pg6102_exam.trip.dto.UpdateTripResponse
-import no.kristiania.pg6102_exam.trip.entity.Trip
 import no.kristiania.pg6102_exam.trip.resource.TripResourceImpl
-import no.kristiania.pg6102_exam.trip.service.TripManagementServiceImpl
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import javax.annotation.PostConstruct

@@ -3,7 +3,7 @@ package no.kristiania.pg6102_exam.trip.resource
 import no.kristiania.pg6102_exam.shared.URLs.BASE_TRIP_URL
 import no.kristiania.pg6102_exam.trip.dto.AddTripRequest
 import no.kristiania.pg6102_exam.trip.dto.TripResponse
-import no.kristiania.pg6102_exam.trip.dto.UpdateTripResponse
+import no.kristiania.pg6102_exam.trip.dto.UpdateTripRequest
 import no.kristiania.pg6102_exam.trip.service.TripManagementService
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
@@ -34,8 +34,8 @@ class TripResourceImpl(private val tripManagementService: TripManagementService)
     }
 
     @PutMapping
-    override fun update(@RequestBody updateTripResponse: UpdateTripResponse): ResponseEntity<TripResponse> {
-        return ResponseEntity.ok(this.tripManagementService.update(updateTripResponse))
+    override fun update(@RequestBody updateTripRequest: UpdateTripRequest): ResponseEntity<TripResponse> {
+        return ResponseEntity.ok(this.tripManagementService.update(updateTripRequest))
     }
 
     @DeleteMapping("/{id}")
