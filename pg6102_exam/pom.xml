@@ -13,6 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>pg6102_exam</name>
 	<description>Enterprise 2 Programming Exam </description>
+	<packaging>jar</packaging>
 	<properties>
 		<java.version>11</java.version>
 		<kotlin.version>1.6.0</kotlin.version>
@@ -91,11 +92,15 @@
 			<version>3.0.0</version>
 		</dependency>
 
-		<!--Swagger does not work though I have followed the steps in Arcuri's repository -->
 <!--		<dependency>-->
-<!--			<groupId>io.springfox</groupId>-->
-<!--			<artifactId>springfox-boot-starter</artifactId>-->
-<!--			<version>3.0.0</version>-->
+<!--			<groupId>org.postgresql</groupId>-->
+<!--			<artifactId>postgresql</artifactId>-->
+<!--			<version>42.3.1</version>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>org.flywaydb</groupId>-->
+<!--			<artifactId>flyway-core</artifactId>-->
+<!--			<version>8.1.0</version>-->
 <!--		</dependency>-->
 	</dependencies>
 
