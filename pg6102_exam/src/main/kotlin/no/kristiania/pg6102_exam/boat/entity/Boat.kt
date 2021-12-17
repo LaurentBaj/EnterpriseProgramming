@@ -1,5 +1,6 @@
 package no.kristiania.pg6102_exam.boat.entity
 
+import no.kristiania.pg6102_exam.shared.URLs.BOAT_SEQUENCE
 import no.kristiania.pg6102_exam.trip.entity.Trip
 import javax.persistence.*
 
@@ -18,9 +19,4 @@ class Boat(
 
         @ManyToOne
         var trip: Trip? = null
-        ) {
-
-    companion object {
-        const val BOAT_SEQUENCE: String = "BOAT_SEQUENCE"
-    }
-}
+        )

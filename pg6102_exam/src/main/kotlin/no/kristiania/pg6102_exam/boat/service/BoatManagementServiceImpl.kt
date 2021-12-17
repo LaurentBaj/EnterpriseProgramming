@@ -52,3 +52,6 @@ class BoatManagementServiceImpl(private val boatDao: BoatDao,
 
     private fun saveOrUpdate(boat: Boat): BoatResponse = this.boatDao.save(boat).toBoatResponse()
 }
+
+
+// Adapted from: https://github.com/MarianoLopez/SpringKotlinBuildingRestApiTutorial/blob/develop/src/main/kotlin/com/z/springkotlinz/service/PersonManagementServiceImpl.kt

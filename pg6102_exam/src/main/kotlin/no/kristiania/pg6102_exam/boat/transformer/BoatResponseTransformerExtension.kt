@@ -11,3 +11,6 @@ fun Boat?.toBoatResponse(): BoatResponse {
             crewMembers = this!!.crewMembers
     )
 }
+
+
+// Adapted from: https://github.com/MarianoLopez/SpringKotlinBuildingRestApiTutorial/blob/develop/src/main/kotlin/com/z/springkotlinz/transformer/PersonResponseTransformerExtension.kt

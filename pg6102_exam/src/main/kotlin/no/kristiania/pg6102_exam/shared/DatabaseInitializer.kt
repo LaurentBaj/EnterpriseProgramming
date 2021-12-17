@@ -38,3 +38,6 @@ class DatabaseInitializer(
         }
     }
 }
+
+
+// Adapted from: https://github.com/arcuri82/testing_security_development_enterprise_systems/blob/master/advanced/rest/gui-v1/src/main/kotlin/org/tsdes/advanced/rest/guiv1/db/DatabaseInitializer.kt

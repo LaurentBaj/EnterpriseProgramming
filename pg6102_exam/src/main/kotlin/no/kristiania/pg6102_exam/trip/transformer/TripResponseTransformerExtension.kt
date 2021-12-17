@@ -10,3 +10,5 @@ fun Trip?.toTripResponse(): TripResponse {
             destinationPort = "${this?.destinationPort}"
     )
 }
+
+// Adapted from https://github.com/MarianoLopez/SpringKotlinBuildingRestApiTutorial/blob/develop/src/main/kotlin/com/z/springkotlinz/transformer/PersonResponseTransformerExtension.kt

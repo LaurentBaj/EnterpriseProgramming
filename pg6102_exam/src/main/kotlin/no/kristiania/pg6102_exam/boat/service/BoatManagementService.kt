@@ -14,3 +14,6 @@ interface BoatManagementService {
     fun deleteAll()
     fun deleteById(id: Long)
 }
+
+
+// Adapted from: https://github.com/MarianoLopez/SpringKotlinBuildingRestApiTutorial/tree/develop/src/main/kotlin/com/z/springkotlinz/service

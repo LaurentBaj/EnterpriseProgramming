@@ -48,3 +48,5 @@ class TripManagementServiceImpl(private val tripDao: TripDao,
 
     private fun saveOrUpdate(trip: Trip): TripResponse = this.tripDao.save(trip).toTripResponse()
 }
+
+// Adapted from: https://github.com/MarianoLopez/SpringKotlinBuildingRestApiTutorial/blob/develop/src/main/kotlin/com/z/springkotlinz/service/PersonManagementServiceImpl.kt

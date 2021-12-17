@@ -14,3 +14,6 @@ class AddTripRequestTransformer : Transformer<AddTripRequest, Trip> {
         )
     }
 }
+
+
+// Adapted from: https://github.com/MarianoLopez/SpringKotlinBuildingRestApiTutorial/tree/develop/src/main/kotlin/com/z/springkotlinz/transformer

@@ -15,3 +15,6 @@ class AddBoatRequestTransformer : Transformer<AddBoatRequest, Boat> {
         )
     }
 }
+
+
+// Adapted from: https://github.com/MarianoLopez/SpringKotlinBuildingRestApiTutorial/tree/develop/src/main/kotlin/com/z/springkotlinz/transformer
