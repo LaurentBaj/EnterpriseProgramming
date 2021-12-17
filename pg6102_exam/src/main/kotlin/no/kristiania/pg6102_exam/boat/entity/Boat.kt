@@ -3,6 +3,8 @@ package no.kristiania.pg6102_exam.boat.entity
 import no.kristiania.pg6102_exam.trip.entity.Trip
 import javax.persistence.*
 
+// Adapted from: https://github.com/MarianoLopez/SpringKotlinBuildingRestApiTutorial/blob/develop/src/main/kotlin/com/z/springkotlinz/domain/Person.kt
+
 @Entity
 class Boat(
 

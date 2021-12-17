@@ -48,3 +48,6 @@ class TripResourceImpl(private val tripManagementService: TripManagementService)
         tripManagementService.deleteAll()
     }
 }
+
+
+// Adapted from: https://github.com/MarianoLopez/SpringKotlinBuildingRestApiTutorial/blob/develop/src/main/kotlin/com/z/springkotlinz/resource/PersonResourceImpl.kt

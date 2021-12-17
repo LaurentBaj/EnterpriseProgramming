@@ -52,3 +52,5 @@ class BoatResourceImpl(private val boatManagementService: BoatManagementService)
         boatManagementService.deleteAll()
     }
 }
+
+// Adapted from: https://github.com/MarianoLopez/SpringKotlinBuildingRestApiTutorial/blob/develop/src/main/kotlin/com/z/springkotlinz/resource/PersonResourceImpl.kt

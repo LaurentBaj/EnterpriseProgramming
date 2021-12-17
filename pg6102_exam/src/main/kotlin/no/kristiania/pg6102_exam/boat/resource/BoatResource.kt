@@ -16,3 +16,6 @@ interface BoatResource {
     fun deleteById(id: Long): ResponseEntity<Unit>
     fun deleteAll()
 }
+
+
+// Adapted from: https://github.com/MarianoLopez/SpringKotlinBuildingRestApiTutorial/blob/develop/src/main/kotlin/com/z/springkotlinz/resource/PersonResource.kt

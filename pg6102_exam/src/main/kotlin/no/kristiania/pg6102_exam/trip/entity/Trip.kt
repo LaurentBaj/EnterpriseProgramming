@@ -1,5 +1,7 @@
 package no.kristiania.pg6102_exam.trip.entity
 
+// Adapted from: https://github.com/MarianoLopez/SpringKotlinBuildingRestApiTutorial/blob/develop/src/main/kotlin/com/z/springkotlinz/domain/Person.kt
+
 import no.kristiania.pg6102_exam.boat.entity.Boat
 import javax.persistence.*
 
